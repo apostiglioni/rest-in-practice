@@ -30,6 +30,7 @@ dependencies {
     compile 'org.hibernate:hibernate-entitymanager'
     compile 'org.hibernate:hibernate-core'
     compile 'org.hibernate:hibernate-java8'
+    compile 'org.liquibase:liquibase-core'
     compile 'com.h2database:h2'
 
     compile 'org.hibernate:hibernate-validator'

@@ -1,0 +1,11 @@
+databaseChangeLog:
+-
+  changeSet:
+    id: 1
+    author: andres.postiglioni
+    changes:
+    - sqlFile:
+        path: db/changelog/migrations/v001.up.sql
+    rollback:
+    - sqlFile:
+        path: db/changelog/migrations/v001.rollback.sql
