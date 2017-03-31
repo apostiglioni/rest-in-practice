@@ -1,0 +1,29 @@
+sourceSets.main.java.srcDirs += 'src/main/jpa'
+
+configurations {
+  jpaMetamodel
+}
+
+dependencies {
+  jpaMetamodel 'org.hibernate:hibernate-jpamodelgen'
+}
+
+task generateJpaMetamodel(type: JavaCompile, group: 'build', description: 'Generates the QueryDSL query types') {
+  classpath = configurations.compile + configurations.jpaMetamodel
+  destinationDir = file('src/main/jpa')
+  source = sourceSets.main.java.filter { !it.path.startsWith(destinationDir.path) }
+  options.compilerArgs = [
+      "-proc:only",
+      "-processor", "org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor"
+  ]
+}
+
+compileJava {
+  dependsOn generateJpaMetamodel
+}
+
+task cleanJpaMetamodel {
+  doLast {
+    delete file('src/main/jpa')
+  }
+}

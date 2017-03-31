@@ -1,0 +1,31 @@
+sourceSets.main.java.srcDirs += 'src/main/querydsl'
+
+configurations {
+  querydslapt
+}
+
+dependencies {
+  querydslapt 'com.querydsl:querydsl-apt:4.1.3:jpa'
+  compile     'com.querydsl:querydsl-jpa:4.1.3'
+  compile     'com.querydsl:querydsl-collections:4.1.3'
+}
+
+task generateQueryDsl(type: JavaCompile, group: 'build', description: 'Generates the QueryDsl query types') {
+  classpath = configurations.compile + configurations.querydslapt
+  destinationDir = file('src/main/querydsl')
+  source = sourceSets.main.java.filter { !it.path.startsWith(destinationDir.path) }
+  options.compilerArgs = [
+      "-proc:only",
+      "-processor", "com.querydsl.apt.jpa.JPAAnnotationProcessor"
+  ]
+}
+
+compileJava {
+  dependsOn generateQueryDsl
+}
+
+task cleanQueryDsl  {
+  doLast {
+    delete file('src/main/querydsl')
+  }
+}

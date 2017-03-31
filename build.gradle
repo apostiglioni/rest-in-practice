@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.5.1.RELEASE"
+    }
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+apply from: 'querydsl.gradle'
+apply from: 'jpa-metamodel.gradle'
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.21'
+    compile 'com.diffplug.durian:durian:3.4.0'
+
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'com.theoryinpractise:halbuilder-standard:4.0.1'
+
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compile 'org.hibernate:hibernate-entitymanager'
+    compile 'org.hibernate:hibernate-core'
+    compile 'org.hibernate:hibernate-java8'
+    compile 'com.h2database:h2'
+
+    compile 'org.hibernate:hibernate-validator'
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
