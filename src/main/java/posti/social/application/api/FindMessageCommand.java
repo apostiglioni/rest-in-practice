@@ -4,12 +4,12 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 import javax.validation.constraints.NotNull;
 
-import posti.social.application.domain.FindMessageQuery;
-import posti.social.application.domain.Message;
 import org.hibernate.validator.valuehandling.UnwrapValidatedValue;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
+import posti.social.application.domain.FindMessageQuery;
+import posti.social.application.domain.Message;
 
 public class FindMessageCommand {
     private final FindMessageQuery query;

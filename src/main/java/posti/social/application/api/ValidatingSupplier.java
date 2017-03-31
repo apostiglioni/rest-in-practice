@@ -4,8 +4,6 @@ import java.util.Set;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 
-import posti.social.application.api.ConstraintViolationException;
-
 public class ValidatingSupplier<T> {
     private final Validator validator;
     private final T target;

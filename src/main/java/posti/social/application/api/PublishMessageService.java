@@ -4,10 +4,10 @@ import java.util.UUID;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.springframework.transaction.annotation.Transactional;
 import posti.social.application.domain.Message;
 import posti.social.application.domain.User;
 import posti.social.application.domain.UserRepository;
-import org.springframework.transaction.annotation.Transactional;
 
 public class PublishMessageService {
     private final UserRepository userRepository;

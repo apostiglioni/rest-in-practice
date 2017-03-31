@@ -3,13 +3,13 @@ package posti.social.adapters;
 import java.util.UUID;
 import javax.validation.Validator;
 
-import posti.social.application.api.ConstraintViolationException;
-import posti.social.application.domain.Message;
-import posti.social.application.api.ValidatingSupplier;
-import posti.social.application.api.GetInboxCommand;
-import posti.social.application.api.GetInboxCommand.Request;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import posti.social.application.api.ConstraintViolationException;
+import posti.social.application.api.GetInboxCommand;
+import posti.social.application.api.GetInboxCommand.Request;
+import posti.social.application.api.ValidatingSupplier;
+import posti.social.application.domain.Message;
 
 public class GetInboxCommandAdapter {
     private final GetInboxCommand command;

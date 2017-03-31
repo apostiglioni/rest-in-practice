@@ -2,17 +2,17 @@ package posti.social.ports.querydsl;
 
 import java.util.UUID;
 
-import posti.social.application.domain.InboxQuery;
-import posti.social.application.domain.Message;
-import posti.social.application.domain.MessageRepository;
-import posti.social.application.domain.QMessage;
-import posti.social.application.domain.QUser;
 import com.querydsl.core.types.Predicate;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.querydsl.QueryDslPredicateExecutor;
+import posti.social.application.domain.InboxQuery;
+import posti.social.application.domain.Message;
+import posti.social.application.domain.MessageRepository;
+import posti.social.application.domain.QMessage;
+import posti.social.application.domain.QUser;
 
 import static com.querydsl.jpa.JPAExpressions.select;
 import static java.util.Objects.requireNonNull;

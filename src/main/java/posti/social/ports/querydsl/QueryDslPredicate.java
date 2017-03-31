@@ -2,12 +2,12 @@ package posti.social.ports.querydsl;
 
 import java.util.Optional;
 
-import posti.social.application.domain.Query;
 import com.querydsl.core.types.Predicate;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.querydsl.QueryDslPredicateExecutor;
+import posti.social.application.domain.Query;
 
 public abstract class QueryDslPredicate<T> implements Query<T> {
     private final QueryDslPredicateExecutor<T> executor;

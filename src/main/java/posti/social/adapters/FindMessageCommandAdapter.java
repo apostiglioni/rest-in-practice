@@ -4,13 +4,13 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 import javax.validation.Validator;
 
-import posti.social.application.api.ConstraintViolationException;
-import posti.social.application.domain.Message;
-import posti.social.application.api.ValidatingSupplier;
-import posti.social.application.api.FindMessageCommand;
-import posti.social.application.api.FindMessageCommand.Request;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import posti.social.application.api.ConstraintViolationException;
+import posti.social.application.api.FindMessageCommand;
+import posti.social.application.api.FindMessageCommand.Request;
+import posti.social.application.api.ValidatingSupplier;
+import posti.social.application.domain.Message;
 
 public class FindMessageCommandAdapter {
     private final FindMessageCommand command;

@@ -4,18 +4,18 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 import javax.transaction.Transactional;
 
-import posti.social.application.domain.FindMessageQuery;
-import posti.social.application.domain.JpaTestConfiguration;
-import posti.social.application.domain.Message;
-import posti.social.application.domain.MessageRepository;
-import posti.social.application.domain.User;
-import posti.social.application.domain.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+import posti.social.application.domain.FindMessageQuery;
+import posti.social.application.domain.JpaTestConfiguration;
+import posti.social.application.domain.Message;
+import posti.social.application.domain.MessageRepository;
+import posti.social.application.domain.User;
+import posti.social.application.domain.UserRepository;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

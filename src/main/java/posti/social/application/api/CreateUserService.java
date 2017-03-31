@@ -3,9 +3,9 @@ package posti.social.application.api;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.springframework.transaction.annotation.Transactional;
 import posti.social.application.domain.User;
 import posti.social.application.domain.UserRepository;
-import org.springframework.transaction.annotation.Transactional;
 
 public class CreateUserService {
     private final UserRepository repository;

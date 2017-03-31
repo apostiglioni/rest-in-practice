@@ -3,10 +3,10 @@ package posti.social.application.api;
 import java.util.UUID;
 import javax.validation.constraints.NotNull;
 
-import posti.social.application.domain.InboxQuery;
-import posti.social.application.domain.Message;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import posti.social.application.domain.InboxQuery;
+import posti.social.application.domain.Message;
 
 public class GetInboxCommand {
     private final InboxQuery query;

@@ -3,10 +3,10 @@ package posti.social.ports.jpa;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import posti.social.application.domain.FindMessageQuery;
 import posti.social.application.domain.Message;
 import posti.social.application.domain.User;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 public class FindMessageJpaSpecification extends ComposableJpaSpecification<Message> implements FindMessageQuery {
     public FindMessageJpaSpecification(JpaSpecificationExecutor<Message> repository) {

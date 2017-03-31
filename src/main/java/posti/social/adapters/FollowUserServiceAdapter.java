@@ -4,10 +4,10 @@ import java.util.UUID;
 import javax.validation.Validator;
 
 import posti.social.application.api.ConstraintViolationException;
-import posti.social.application.api.ValidatingSupplier;
 import posti.social.application.api.FollowUserService;
 import posti.social.application.api.FollowUserService.Request;
 import posti.social.application.api.UserNotFoundException;
+import posti.social.application.api.ValidatingSupplier;
 
 public class FollowUserServiceAdapter {
     private final FollowUserService service;

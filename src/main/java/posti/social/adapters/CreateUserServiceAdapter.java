@@ -3,9 +3,9 @@ package posti.social.adapters;
 import javax.validation.Validator;
 
 import posti.social.application.api.ConstraintViolationException;
-import posti.social.application.domain.User;
-import posti.social.application.api.ValidatingSupplier;
 import posti.social.application.api.CreateUserService;
+import posti.social.application.api.ValidatingSupplier;
+import posti.social.application.domain.User;
 
 public class CreateUserServiceAdapter {
     private final CreateUserService service;

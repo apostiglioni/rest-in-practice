@@ -4,11 +4,11 @@ import java.util.UUID;
 import javax.validation.Validator;
 
 import posti.social.application.api.ConstraintViolationException;
-import posti.social.application.domain.Message;
-import posti.social.application.api.ValidatingSupplier;
 import posti.social.application.api.PublishMessageService;
 import posti.social.application.api.PublishMessageService.Request;
 import posti.social.application.api.UserNotFoundException;
+import posti.social.application.api.ValidatingSupplier;
+import posti.social.application.domain.Message;
 
 public class PublishMessageServiceAdapter {
     private final PublishMessageService service;

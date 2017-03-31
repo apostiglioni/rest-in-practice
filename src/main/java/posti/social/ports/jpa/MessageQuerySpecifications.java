@@ -3,11 +3,11 @@ package posti.social.ports.jpa;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import org.springframework.data.jpa.domain.Specification;
 import posti.social.application.domain.Message;
 import posti.social.application.domain.Message_;
 import posti.social.application.domain.User;
 import posti.social.application.domain.User_;
-import org.springframework.data.jpa.domain.Specification;
 
 import static java.util.Objects.requireNonNull;
 

@@ -3,12 +3,6 @@ package posti.social.ports.querydsl;
 import java.util.ArrayList;
 import javax.transaction.Transactional;
 
-import posti.social.application.domain.InboxQuery;
-import posti.social.application.domain.JpaTestConfiguration;
-import posti.social.application.domain.Message;
-import posti.social.application.domain.MessageRepository;
-import posti.social.application.domain.User;
-import posti.social.application.domain.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +11,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+import posti.social.application.domain.InboxQuery;
+import posti.social.application.domain.JpaTestConfiguration;
+import posti.social.application.domain.Message;
+import posti.social.application.domain.MessageRepository;
+import posti.social.application.domain.User;
+import posti.social.application.domain.UserRepository;
 
 import static java.lang.Thread.sleep;
 import static java.util.Arrays.asList;

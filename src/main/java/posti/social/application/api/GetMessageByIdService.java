@@ -4,9 +4,9 @@ import java.util.Optional;
 import java.util.UUID;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.transaction.annotation.Transactional;
 import posti.social.application.domain.Message;
 import posti.social.application.domain.MessageRepository;
-import org.springframework.transaction.annotation.Transactional;
 
 public class GetMessageByIdService {
     private final MessageRepository repository;

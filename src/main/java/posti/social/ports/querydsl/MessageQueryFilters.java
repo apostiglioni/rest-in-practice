@@ -3,9 +3,9 @@ package posti.social.ports.querydsl;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import com.querydsl.core.types.dsl.BooleanExpression;
 import posti.social.application.domain.QMessage;
 import posti.social.application.domain.User;
-import com.querydsl.core.types.dsl.BooleanExpression;
 
 import static java.util.Objects.requireNonNull;
 

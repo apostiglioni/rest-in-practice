@@ -3,12 +3,12 @@ package posti.social.ports.jpa;
 import java.util.List;
 import java.util.Optional;
 
-import posti.social.application.domain.Query;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specifications;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import posti.social.application.domain.Query;
 
 public abstract class JpaSpecificationQuery<T> implements Query<T> {
     private final JpaSpecificationExecutor<T> executor;
