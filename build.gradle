@@ -5,6 +5,7 @@ buildscript {
     }
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:1.5.1.RELEASE"
+        classpath 'com.bmuschko:gradle-docker-plugin:3.0.5'
     }
 }
 
@@ -37,4 +38,43 @@ dependencies {
 
     testCompile 'junit:junit:4.12'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
+}
+
+apply plugin: 'com.bmuschko.docker-remote-api'
+import com.bmuschko.gradle.docker.tasks.image.*
+import com.bmuschko.gradle.docker.tasks.container.*
+
+task createDockerfile(type: Dockerfile) {
+    destFile = project.file('build/docker/Dockerfile')
+
+    from       'frolvlad/alpine-oraclejdk8:slim'
+    entryPoint 'java', '-jar', 'social.jar'
+    exposePort 8080
+    addFile    'social.jar', 'social.jar'
+}
+
+task buildDockerImage(type: DockerBuildImage) {
+    dependsOn createDockerfile, build
+    inputDir = createDockerfile.destFile.parentFile
+    tag = "acamica/${jar.baseName}"
+
+    doFirst {
+      copy { from jar into 'build/docker' }
+    }
+}
+
+task createDockerContainer(type: DockerCreateContainer) {
+    dependsOn buildDockerImage
+    containerName = jar.baseName
+    targetImageId { buildDockerImage.getImageId() }
+    portBindings = ['8080:8080']
+}
+
+task startDockerContainer(type: DockerStartContainer) {
+    dependsOn createDockerContainer
+    targetContainerId { createDockerContainer.getContainerId() }
+}
+
+task stopDockerContainer(type: DockerStopContainer) {
+    targetContainerId { createDockerContainer.getContainerId() }
 }
